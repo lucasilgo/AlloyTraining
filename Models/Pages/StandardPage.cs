@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using AlloyTraining.Models.Blocks;
+using System.ComponentModel.DataAnnotations;
 
 namespace AlloyTraining.Models.Pages
 {
@@ -16,5 +17,7 @@ namespace AlloyTraining.Models.Pages
             GroupName = SystemTabNames.Content,
             Order = 150)]
         public virtual XhtmlString MainBody { get; set; }
+
+        public virtual EmployeeBlock Author { get; set; }
     }
 }
