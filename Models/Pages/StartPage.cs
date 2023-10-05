@@ -1,3 +1,4 @@
+using AlloyTraining.Models.Media;
 using System.ComponentModel.DataAnnotations;
 
 namespace AlloyTraining.Models.Pages
@@ -40,6 +41,8 @@ namespace AlloyTraining.Models.Pages
             Description = "The main content area of the page",
             GroupName = SystemTabNames.Content,
             Order = 30)]
+        [AllowedTypes(typeof(StandardPage), typeof(BlockData), 
+            typeof(ImageData), typeof(ContentFolder), typeof(PdfFile))]
         public virtual ContentArea MainContentArea { get; set; }
     }
 }

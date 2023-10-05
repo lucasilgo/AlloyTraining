@@ -31,11 +31,19 @@ namespace AlloyTraining
                     typeof(IFirstRequestInitializer), typeof(AddPagesInitializer)));
             }
 
+            services.Configure<DisplayOptions>(options =>
+            {
+                options.Add(id: SiteTags.Full, name: "Full", tag: SiteTags.Full);
+                options.Add(id: SiteTags.Wide, name: "Wide", tag: SiteTags.Wide);
+                options.Add(id: SiteTags.Narrow, name: "Narrow", tag: SiteTags.Narrow);
+            });
+
             services
                 .AddCmsAspNetIdentity<ApplicationUser>()
                 .AddCms()
                 .AddAdminUserRegistration()
-                .AddEmbeddedLocalization<Startup>();
+                .AddEmbeddedLocalization<Startup>()
+                .AddDetection();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
