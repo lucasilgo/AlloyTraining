@@ -41,6 +41,7 @@ namespace AlloyTraining
             services
                 .AddCmsAspNetIdentity<ApplicationUser>()
                 .AddCms()
+                .AddFind()
                 .AddAdminUserRegistration()
                 .AddEmbeddedLocalization<Startup>()
                 .AddDetection();

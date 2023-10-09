@@ -44,5 +44,13 @@ namespace AlloyTraining.Models.Pages
         [AllowedTypes(typeof(StandardPage), typeof(BlockData), 
             typeof(ImageData), typeof(ContentFolder), typeof(PdfFile))]
         public virtual ContentArea MainContentArea { get; set; }
+
+        [Display(
+            Name = "Search page",
+            Description = "If you add a Search page to the site, set this property to reference it to enable search from every page.",
+            GroupName = SiteTabNames.SiteSettings,
+            Order = 40)]
+        [AllowedTypes(typeof(SearchPage))]
+        public virtual PageReference SearchPageLink { get; set; }
     }
 }
